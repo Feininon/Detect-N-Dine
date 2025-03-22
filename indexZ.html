@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload or Capture an Image</title>
+</head>
+<body style="background-color: #EEA4BB; color:#423E3D">
+    <h2>Upload or Capture an Image</h2>
+
+    <!-- File Upload -->
+    <input type="file" id="imageInput" accept="image/*">
+    <button onclick="uploadImage()">Upload</button>
+
+    <!-- Webcam Capture -->
+    <h3>Capture from Webcam</h3>
+    <video id="webcam" autoplay style="width: 300px; height: 200px;"></video>
+    <button onclick="captureImage()">Capture and Upload</button>
+    <canvas id="canvas" style="display: none;"></canvas>
+
+    <p id="status"></p>
+
+    <h3>Detected Ingredients</h3>
+    <ul id="ingredientsList"></ul>
+
+    <h3>Suggested Recipes</h3>
+    <ul id="recipes"></ul>
+
+    <h3>Recipe info</h3>
+    <p id="recipeData"></p>
+
+    <h3>Step-by-Step Recipe</h3>
+    <p id="recipeSteps"></p>
+
+    <button id="prevStepBtn" onclick="prevStep()">Previous</button>
+    <button id="nextStepBtn" onclick="nextStep()">Next</button>
+    
+
+
+    <h3>Missing Ingredients</h3>
+    <ul id="missingIngredients"></ul>
+    <button id="modifyRecipeBtn" style="display: none;" onclick="modifyRecipe()">Modify Recipe</button>
+
+    <script src="app.js"></script>
+    <script src="timer.js"></script>
+    <script>
+        // Initialize webcam
+        const webcam = document.getElementById("webcam");
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then((stream) => {
+                webcam.srcObject = stream;
+            })
+            .catch((err) => {
+                console.error("Error accessing webcam:", err);
+                alert("Unable to access the webcam.");
+            });
+
+
+    </script>
+</body>
+</html>
