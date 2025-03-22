@@ -198,6 +198,37 @@ their execution when needed.
 ## <ins> Overall Work Flow </ins>
 
 
+```mermaid
+flowchart TD
+    A[User] --> B{Upload Method}
+    B -->|Webcam Capture| C[Image Processing]
+    B -->|File Upload| C
+    C --> D[Ollama Vision API]
+    D --> E[Detected Ingredients]
+    E --> F[AI Recipe Generation
+Ollama LLM]
+    F --> G{Recipe List}
+    G --> H[User Selects Recipe]
+    H --> I[Display Ingredients &
+ Nutritional Info]
+    I --> J[Show Step 1]
+    J --> K{Next/Prev?}
+    K -->|Next| L[Show Step N+1]
+    K -->|Prev| M[Show Step N-1]
+    L --> K
+    M --> K
+    H --> N{Missing Ingredients?}
+    N -->|Check Items| O[Regenerate Recipe
+ Modified Ingredients]
+    O --> I
+    N -->|Proceed| J    
+    Y -.-> K
+    AA -.-> J
+    AD -.-> J
+
+```
+
+
 
 
 
