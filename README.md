@@ -36,6 +36,11 @@ node server.js
 
 7.once the server is running, open the indexZ.html file in browser, and it will be running.
 
+## what all the scripts do:
+
+* _detectings.js_ *
+
+
 
 
 
