@@ -1,4 +1,4 @@
-# Detect-n-Dine
+# DetectN'-Dine
 
 ## All the versions so it'll be easy to run 
 built in node v20.11.1
@@ -274,7 +274,7 @@ flowchart TD
 
 ```
 
-### _app.py_
+### _app.js_
 
 This script contains multiple functions that work together to display, navigate, and modify a recipe's steps.
 Here's an overview of each function:
