@@ -220,10 +220,7 @@ flowchart TD
  Modified Ingredients]
     O --> I
     N -->|Proceed| J    
-    Y -.-> K
-    AA -.-> J
-    AD -.-> J
-
+   
 ```
 
 
