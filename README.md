@@ -8,11 +8,14 @@ nvm version=1.2.2
 ## Setup and Running 
 
 1. Installing Node.js
-You can use NVM to manage multiple versions of node.  Get them from, for Linux: https://github.com/nvm-sh/nvm and for Windows: https://github.com/coreybutler/nvm-windows 
+You can use NVM to manage multiple versions of node.  Get them from, for Linux: https://github.com/nvm-sh/nvm and for Windows: https://github.com/coreybutler/nvm-windows after installlation go to the respective directory run 
+```bash
+npm i
+``` 
 
-2. Download ollama from https://ollama.com/ and install it 
+3. Download ollama from https://ollama.com/ and install it 
 
-3. install the used models by running this following cmd in promptshell
+4. install the used models by running this following cmd in promptshell
    
 ``` bash
 ollama pull [MODEL_NAME]
@@ -38,7 +41,9 @@ node server.js
 
 ## what all the scripts do:
 
-**_detectings.js_**
+### _detectings.js_
+
+
 
 
 
