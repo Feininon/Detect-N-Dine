@@ -39,7 +39,7 @@ node server.js
 
 7.once the server is running, open the indexZ.html file in browser, and it will be running.
 
-## what all the scripts do:
+## What all the scripts do:
 
 ### _detectings.js_
 
@@ -65,7 +65,7 @@ library called 'ollama' to analyze the image and identify any food items present
 flowchart TD
     A[Function: detectIngredients] --> B{File exists?}
     B -->|No| C[Throw Error]
-    B -->|Yes| D[Call Ollama Vision API]
+    B -->|Yes| D[Call Vision Model API]
     D --> E{Valid Response?}
     E -->|No| F[Throw Error]
     E -->|Yes| G[Process Ingredients]
@@ -75,6 +75,7 @@ flowchart TD
     H --> Z
 
 ```
+
 
 ### _chat.js_
 contains the following functions.
@@ -120,6 +121,9 @@ flowchart TD
     
     R[modifyRecipeData] --> S[LLM]
     S --> T["Returns: Modified recipe data"]
+    
+
+
 
 ```
 
@@ -160,6 +164,7 @@ screen whenever an event occurs (e.g., speech recognition error).
    - The `playAlarm`, `stopAlarm`, and `toggleAlarm` functions handle the playback, stopping, and toggling of the
 alarm sound.
 
+
 ```mermaid
 flowchart TD
     A[DOM Loaded] --> B[CreateVoiceButton]
@@ -197,7 +202,6 @@ flowchart TD
     
 
 ```
-
 
 ### _server.js_
 
@@ -240,6 +244,7 @@ missingIngredients list, and returns the modified recipe data.
 4. Static file serving: The server serves static files located in './uploads' when requested (for example, when an
 image is uploaded).
 
+
 ```mermaid
 flowchart TD
     A[Server Start] --> B[Express Init]
@@ -274,7 +279,8 @@ flowchart TD
 
 ```
 
-### _app.py_
+
+### _app.js_
 
 This script contains multiple functions that work together to display, navigate, and modify a recipe's steps.
 Here's an overview of each function:
@@ -309,6 +315,8 @@ and sends a request to the server to modify the recipe accordingly.
 Event listeners or calls to these functions are likely placed elsewhere in the script (not shown here) to initiate
 their execution when needed.
 
+
+
 ```mermaid
 flowchart TD
     A[User Action] --> B{fetchReciperecipeName}
@@ -341,6 +349,8 @@ flowchart TD
     
 ```
 
+
+
 ## <ins> Overall Work Flow </ins>
 
 
@@ -368,7 +378,21 @@ flowchart TD
     N -->|Proceed| J    
    
 ```
+## Credits
+### - PRITHI PRASANNA P
+GitHub: <placeholder>
 
+Mail: <placeholder>
+
+### - Sai Vignesh 
+GitHub: @saivignesh45
+
+Mail: saivignesh742@gmail.com
+
+### - Gokulramanan 
+GitHub: @Feininon 
+
+Mail: gokulramananvec@gmail.com
 
 
 
