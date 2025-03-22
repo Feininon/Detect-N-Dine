@@ -2,9 +2,7 @@
 
 ## All the versions so it'll be easy to run 
 built in node v20.11.1
-
 npm version=10.2.4
-
 nvm version=1.2.2
 
 ## Setup and Running 
