@@ -369,6 +369,22 @@ flowchart TD
    
 ```
 
+## Credits
+### - PRITHI PRASANNA P
+GitHub: @PrithiPrasanna
+
+Mail: prithi.palani58@gmail.com
+
+### - Sai Vignesh 
+GitHub: @saivignesh45
+
+Mail: saivignesh742@gmail.com
+
+### - Gokulramanan 
+GitHub: @Feininon 
+
+Mail: gokulramananvec@gmail.com
+
 
 
 
