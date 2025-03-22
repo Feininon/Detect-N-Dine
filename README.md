@@ -21,5 +21,6 @@ ollama pull [MODEL_NAME]
 4. if you are using git, clone this repo by running
 ```bash
 git clone https://github.com/Feininon/Detect-n-Dine
-```  or Download it and unzip it.
+```
+or Download it and unzip it.
 
