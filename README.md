@@ -8,11 +8,7 @@ nvm version=1.2.2
 ## Setup and Running 
 
 1. Installing Node.js
-You can use NVM to manage multiple versions of node.  Get them from
-
-  Linux: https://github.com/nvm-sh/nvm
- 
-  Windows: https://github.com/coreybutler/nvm-windows 
+You can use NVM to manage multiple versions of node.  Get them from, for Linux: https://github.com/nvm-sh/nvm and for Windows: https://github.com/coreybutler/nvm-windows 
 
 2. Download ollama from https://ollama.com/ and install it 
 
