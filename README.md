@@ -198,11 +198,10 @@ their execution when needed.
 ## <ins> Overall Work Flow </ins>
 
 
-
 ```mermaid
 flowchart TD
     A[User] --> B{Upload Method}
-    B -->|Webcam Capture| D[Image Processing]
+    B -->|Webcam Capture| D[Image Processing Vision Model]
     B -->|File Upload| D
     D --> E[Detected Ingredients]
     E --> F[AI Recipe Generation
