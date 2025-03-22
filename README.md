@@ -8,7 +8,6 @@ nvm version=1.2.2
 ## Setup and Running 
 
 1. Installing Node.js
-
 You can use NVM to manage multiple versions of node.  Get them from:
 
 Linux: https://github.com/nvm-sh/nvm
