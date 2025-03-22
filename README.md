@@ -201,9 +201,9 @@ their execution when needed.
 ```mermaid
 flowchart TD
     A[User] --> B{Upload Method}
-    B -->|Webcam Capture| C[Image Processing]
-    B -->|File Upload| C
-    C --> D[Vision Model]
+    B -->|Webcam Capture| 
+    B -->|File Upload| 
+    B --> D[Vision Model]
     D --> E[Detected Ingredients]
     E --> F[AI Recipe Generation
 Ollama LLM]
