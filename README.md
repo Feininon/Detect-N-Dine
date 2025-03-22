@@ -37,9 +37,9 @@ Windows: https://github.com/coreybutler/nvm-windows
 
 3. install the used models by running this following cmd in promptshell
    
-   ``` bash
-   ollama pull [MODEL_NAME]
-   ```
+``` bash
+ollama pull [MODEL_NAME]
+```
 
 4. if you are using git, clone this repo by running
 ```bash
