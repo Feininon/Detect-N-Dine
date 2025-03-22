@@ -204,8 +204,7 @@ flowchart TD
     B -->|Webcam Capture| D[Image Processing using Vision Model]
     B -->|File Upload| D
     D --> E[Detected Ingredients]
-    E --> F[AI Recipe Generation
-Ollama LLM]
+    E --> F[AI Recipe Generation using LLM]
     F --> G{Recipe List}
     G --> H[User Selects Recipe]
     H --> I[Display Ingredients &
