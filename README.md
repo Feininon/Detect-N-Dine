@@ -38,7 +38,7 @@ node server.js
 
 ## what all the scripts do:
 
-* _detectings.js_ *
+*_detectings.js_*
 
 
 
