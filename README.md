@@ -203,7 +203,7 @@ flowchart TD
     A[User] --> B{Upload Method}
     B -->|Webcam Capture| C[Image Processing]
     B -->|File Upload| C
-    C --> D[Ollama Vision API]
+    C --> D[Vision Model]
     D --> E[Detected Ingredients]
     E --> F[AI Recipe Generation
 Ollama LLM]
