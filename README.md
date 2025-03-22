@@ -1,4 +1,4 @@
-# DetectN'-Dine
+# Detect-N-Dine
 
 ## All the versions so it'll be easy to run 
 built in node v20.11.1
