@@ -6,10 +6,9 @@ npm version=10.2.4
 nvm version=1.2.2
 
 ## Setup and Running 
-1.Installing Node.js
+**1.Installing Node.js**
 
 This project requires Node.js. You can install it as follows:
-
 **For Windows and macOS:**
 1. Visit the [Node.js website](https://nodejs.org/).
 2. Download and run the installer for the **LTS (Long Term Support)** version.
@@ -33,6 +32,7 @@ Alternatively, you can use NVM to manage multiple versions of node instead of in
 Linux: https://github.com/nvm-sh/nvm
 Windows: https://github.com/coreybutler/nvm-windows
 
+
 2. Download ollama from https://ollama.com/ and install it 
 
 3. install the used models by running this following cmd in promptshell
@@ -40,7 +40,8 @@ Windows: https://github.com/coreybutler/nvm-windows
    ``` bash
    ollama pull [MODEL_NAME]
    ```
-4, if you are using git, clone this repo by running
+
+4. if you are using git, clone this repo by running
 ```bash
 git clone https://github.com/Feininon/Detect-n-Dine
 ```
