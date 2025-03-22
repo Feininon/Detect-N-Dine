@@ -9,7 +9,7 @@ nvm version=1.2.2
 2. Download ollama from https://ollama.com/ and install it 
 
 3. install the used models by running this following cmd in promptshell
-   '''{bash}
+   '''<format>
    ollama pull [MODEL_NAME]
    '''
 
