@@ -195,6 +195,7 @@ and sends a request to the server to modify the recipe accordingly.
 Event listeners or calls to these functions are likely placed elsewhere in the script (not shown here) to initiate
 their execution when needed.
 
+## <ins> Overall Work Flow </ins>
 
 
 
