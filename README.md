@@ -51,13 +51,15 @@ library called 'ollama' to analyze the image and identify any food items present
 3. Inside the function, we check if the provided image file exists. If it doesn't exist, an error is thrown.
 4. It then logs a message indicating that the image is being processed.
 5. Inside a try-catch block, we call the `chat()` function from the 'ollama' library. We pass in several parameters:
-        a. The model to use for analysis (in this case, `llama3.2-vision`)
-        b. An array of messages that includes a prompt for Ollama to list the food items it detects and an image path as part of the prompt.
 
-6. If the response from Ollama is invalid (i.e., doesn't have a content property), an error is thrown.
-7. If the response is valid, we extract the list of ingredients by splitting the response content into lines and trimming each item.
-8. Finally, we log the detected ingredients and return them from the function.
-9. The script ends by exporting the `detectIngredients` function for other modules to use.
+   a. The model to use for analysis (in this case, `llama3.2-vision`)
+
+   b. An array of messages that includes a prompt for Ollama to list the food items it detects and an image path as part of the prompt.
+
+7. If the response from Ollama is invalid (i.e., doesn't have a content property), an error is thrown.
+8. If the response is valid, we extract the list of ingredients by splitting the response content into lines and trimming each item.
+9. Finally, we log the detected ingredients and return them from the function.
+10. The script ends by exporting the `detectIngredients` function for other modules to use.
 
 ### _chat.js_
 contains the following functions.
