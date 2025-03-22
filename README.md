@@ -24,3 +24,36 @@ git clone https://github.com/Feininon/Detect-n-Dine
 ```
 or Download it and unzip it.
 
+5. make sure ollama is running, if not run
+```bash
+ollama serve
+```
+
+6.open the terminal for the directory run the _server.js_ file by,
+```bash
+node server.js
+```
+
+7.once the server is running, open the indexZ.html file in browser, and it will be running.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
