@@ -370,7 +370,7 @@ flowchart TD
 ```
 
 ## Credits
-### - PRITHI PRASANNA P
+### - Prithi Prasanna 
 GitHub: @PrithiPrasanna
 
 Mail: prithi.palani58@gmail.com
