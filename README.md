@@ -46,22 +46,17 @@ node server.js
 this script defines a function `detectIngredients` that takes an image path as a parameter and uses an external
 library called 'ollama' to analyze the image and identify any food items present in it. 
 
-1. At the top, we import Node.js's built-in `fs` module and the 'ollama' library using ES6 syntax (const and
-import statements).
+1. At the top, we import Node.js's built-in `fs` module and the 'ollama' library using ES6 syntax (const and import statements).
 2. The script defines a function `detectIngredients` that takes an image path as a parameter.
 3. Inside the function, we check if the provided image file exists. If it doesn't exist, an error is thrown.
 4. It then logs a message indicating that the image is being processed.
-5. Inside a try-catch block, we call the `chat()` function from the 'ollama' library. We pass in several
-parameters:
+5. Inside a try-catch block, we call the `chat()` function from the 'ollama' library. We pass in several parameters:
         a. The model to use for analysis (in this case, `llama3.2-vision`)
-        b. An array of messages that includes a prompt for Ollama to list the food items it detects and an image path as
-
-part of the prompt.
+        b. An array of messages that includes a prompt for Ollama to list the food items it detects and an image path as part of the prompt.
 
 6. If the response from Ollama is invalid (i.e., doesn't have a content property), an error is thrown.
 
-7. If the response is valid, we extract the list of ingredients by splitting the response content into lines and
-trimming each item.
+7. If the response is valid, we extract the list of ingredients by splitting the response content into lines and trimming each item.
 
 8. Finally, we log the detected ingredients and return them from the function.
 
