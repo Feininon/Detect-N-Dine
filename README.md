@@ -61,6 +61,21 @@ library called 'ollama' to analyze the image and identify any food items present
 9. Finally, we log the detected ingredients and return them from the function.
 10. The script ends by exporting the `detectIngredients` function for other modules to use.
 
+```mermaid
+flowchart TD
+    A[Function: detectIngredients] --> B{File exists?}
+    B -->|No| C[Throw Error]
+    B -->|Yes| D[Call Ollama Vision API]
+    D --> E{Valid Response?}
+    E -->|No| F[Throw Error]
+    E -->|Yes| G[Process Ingredients]
+    G --> H[Return Array]
+    C --> Z[End]
+    F --> Z
+    H --> Z
+
+```
+
 ### _chat.js_
 contains the following functions.
 
@@ -82,6 +97,32 @@ ingredients that are no longer needed due to missing ingredients). The function 
 of missing ingredients (in the form of missingIngredients) as arguments and returns the modified recipe data.
 7. All the functions are exported from the module using the `module.exports` object, so they can be imported and
 used in other parts of the application.
+
+
+```mermaid
+flowchart TD
+    A[chatWithLlama] --> B[LLM]
+    B --> C["Returns: Recipe list"]
+    
+    D[getRecipeSteps] --> E["Calls: getRecipeData"]
+    E --> F[LLM]
+    F --> G["Returns: Formatted steps"]
+    
+    H[modifyRecipe] --> I["Calls: modifyRecipeData"]
+    I --> J[LLM]
+    J --> K["Returns: Modified steps"]
+    
+    L[extractIngredientsFromRecipe] --> M["Processes LLM response"]
+    M --> N["Returns: Ingredients array"]
+    
+    O[getRecipeData] --> P[LLM]
+    P --> Q["Returns: Full recipe data"]
+    
+    R[modifyRecipeData] --> S[LLM]
+    S --> T["Returns: Modified recipe data"]
+
+```
+
 
 ### _timer.js_
 
@@ -118,6 +159,45 @@ screen whenever an event occurs (e.g., speech recognition error).
 6. Alarm Functions:
    - The `playAlarm`, `stopAlarm`, and `toggleAlarm` functions handle the playback, stopping, and toggling of the
 alarm sound.
+
+```mermaid
+flowchart TD
+    A[DOM Loaded] --> B[CreateVoiceButton]
+    A --> C[EnsureStepButtons]
+    B --> D["Floating Mic Button (🎤)"]
+    D --> E{On Click}
+    E --> F[Start Listening]
+    
+    subgraph RecognitionFlow
+        F --> G[SpeechRecognition Start]
+        G --> H{On Result}
+        H -->|"Command: Next/Previous"| I[Trigger Step Buttons]
+        H -->|"Command: Set Timer"| J[Parse Minutes]
+        J --> K[Set Countdown]
+        G --> L{On Error}
+        L --> M[Show Notification]
+        G --> N{On End}
+        N --> O[Restart Listening]
+    end
+    
+    subgraph TimerSystem
+        K --> P[Show Countdown Button]
+        P --> Q{Timer Expires?}
+        Q -->|Yes| R[Play Alarm]
+        R --> S[Show Notification]
+        S --> T{User Click}
+        T --> U[Stop Alarm]
+    end
+    
+    subgraph UIComponents
+        C --> V["Create Next/Prev Buttons "]
+        M --> W["Temporary Notification "]
+        S --> W
+    end
+    
+
+```
+
 
 ### _server.js_
 
@@ -160,6 +240,40 @@ missingIngredients list, and returns the modified recipe data.
 4. Static file serving: The server serves static files located in './uploads' when requested (for example, when an
 image is uploaded).
 
+```mermaid
+flowchart TD
+    A[Server Start] --> B[Express Init]
+    B --> C[Apply Middleware]
+    C --> D[CORS Setup]
+    C --> E[JSON Parsing]
+    C --> F[Static Files]
+
+    subgraph API_Endpoints
+        G[POST /upload] --> H[Multer File Handling]
+        H --> I[Save to uploads/]
+        I --> J[detectIngredients]
+        J --> K[Return Ingredients]
+
+        L[GET /recipes] --> M[chatWithLlama]
+        M --> N[Return Recipe List]
+
+        O[GET /recipe-steps] --> P[getRecipeData]
+        P --> Q[extractIngredientsFromRecipe]
+        Q --> R[Return Steps+Ingredients]
+
+        S[POST /modify-recipe] --> T[modifyRecipeData]
+        T --> U[modifyRecipe]
+        U --> V[Return Modified Recipe]
+    end
+
+    F --> W[Serve /uploads/*]
+    D --> G
+    D --> L
+    D --> O
+    D --> S
+
+```
+
 ### _app.py_
 
 This script contains multiple functions that work together to display, navigate, and modify a recipe's steps.
@@ -194,6 +308,38 @@ and sends a request to the server to modify the recipe accordingly.
 
 Event listeners or calls to these functions are likely placed elsewhere in the script (not shown here) to initiate
 their execution when needed.
+
+```mermaid
+flowchart TD
+    A[User Action] --> B{fetchReciperecipeName}
+    B --> C[Server Request]
+    C --> D[Get Recipe Data]
+    D --> E["splitterrecipeName, steps"]
+    
+    E --> F["stepsArray = processed steps"]
+    E --> G["currentStep = 0"]
+    E --> H[ensureStepButtons]
+    
+    subgraph Navigation
+        H --> I[Create Next/Prev Buttons]
+        I --> J[nextStep/prevStep]
+        J --> K["currentStep ± 1"]
+        K --> L[displayStep]
+    end
+    
+    L --> M["Update recipeSteps DOM"]
+    
+    E --> N["Global Vars:
+    - stepsArray
+    - currentStep
+    - recipeSteps"]
+    
+    O[modifyRecipe] --> P[Get Checked Ingredients]
+    P --> Q[Server Request]
+    Q --> R[Update Recipe]
+    R --> E
+    
+```
 
 ## <ins> Overall Work Flow </ins>
 
