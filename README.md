@@ -13,9 +13,9 @@ You can use NVM to manage multiple versions of node.  Get them from, for Linux: 
 npm i
 ``` 
 
-3. Download ollama from https://ollama.com/ and install it 
+2. Download ollama from https://ollama.com/ and install it 
 
-4. install the used models by running this following cmd in promptshell
+3. install the used models by running this following cmd in promptshell
    
 ``` bash
 ollama pull [MODEL_NAME]
